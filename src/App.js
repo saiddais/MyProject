@@ -10,7 +10,6 @@ function App() {
 </head>
 <body>
 <h1> this is first my site </h1>
-<p>my name is said mansouri and i am programmer !</p>
 <img src={theImage} className="iii"/>
 
 </body>
