@@ -1,20 +1,38 @@
-import logo from './logo.svg';
-import theImage from './im1.jpg'
+import React from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/index';
+import About from './pages/about';
+import Events from './pages/events';
+import AnnualReport from './pages/annual';
+import Teams from './pages/team';
+import Blogs from './pages/blogs';
+import SignUp from './pages/signup';
+import Signin from './pages/signin';
 
 function App() {
-  return (
-    <div>
-<head>
-<title> test page</title>
-</head>
-<body>
-<h1> this is first my site </h1>
-<img src={theImage} className="iii"/>
+return (
+	<Router>
+	 <Navbar /> 
+	<Routes>
 
-</body>
-    </div>
-  );
+	{/* <Route exact path='/' element={< Home />}></Route> */}
+
+ 		<Route path='/' exact element={< Home />} />
+    	<Route path='/about' element={<About/>} />
+		<Route path='/events' element={<Events/>} />
+		<Route path='/annual' element={<AnnualReport/>} />
+		<Route path='/team' element={<Teams/>} />
+		<Route path='/blogs' element={<Blogs/>} />
+		<Route path='/sign-up' element={<SignUp/>} />
+		<Route path='/signin' element={<Signin/>} />
+	</Routes>
+	</Router>
+);
 }
+
+
+
 
 export default App;
